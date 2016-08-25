@@ -12,6 +12,14 @@ body {
   position:relative;
 }
 
+@allC : #cccccc;
+@allF : #ffffff;
+
+.squareSize(@sideLength : 0) {
+  width: @sideLength;
+  height: @sideLength;
+}
+
 .rounding(@radius: 0 6px 6px 6px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -31,17 +39,18 @@ body {
   display:block;
   content:" ";
   float:right;
-  width:0;
-  height:0;
+
+  .squareSize;
+
   border-color:transparent;
   border-style:solid;
   border-width:5px 0 5px 5px;
-  border-left-color:#cccccc;
+  border-left-color: @allC;
   margin-top:5px;
   margin-right:-10px;
 }
 .dropdown-submenu:hover > a:after {
-  border-left-color: #ffffff;
+  border-left-color: @allF;
 }
 .dropdown-submenu.pull-left {
   float:none;
